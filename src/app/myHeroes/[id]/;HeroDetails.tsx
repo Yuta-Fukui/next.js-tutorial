@@ -5,7 +5,7 @@ import { Fragment } from "react";
  * @param {string} id - ヒーローのID
  */
 export default function Hero({ id }: { id: string }) {
-	const heros: { [key: string]: { title: string; content: string } } = {
+	const heroes: { [key: string]: { title: string; content: string } } = {
 		"1": {
 			title: "アンパンマン",
 			content:
@@ -23,7 +23,7 @@ export default function Hero({ id }: { id: string }) {
 		},
 	};
 
-	const hero = heros[id] || {
+	const hero = heroes[id] || {
 		title: "ヒーローが見つかりません",
 		content: "このヒーローは存在しません",
 	};
@@ -32,8 +32,8 @@ export default function Hero({ id }: { id: string }) {
 		<>
 			<h1>{hero.title}</h1>
 			<p>
-				{hero.content.split("\n").map((line) => (
-					<Fragment key={line}>
+				{hero.content.split("\n").map((line, index) => (
+					<Fragment key={index}>
 						{line}
 						<br />
 					</Fragment>

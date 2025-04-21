@@ -1,0 +1,38 @@
+import Link from "next/link";
+
+/**
+ * @description
+ * ヒーロー一覧を表示するコンポーネント
+ * @returns {JSX.Element} ヒーロー一覧を表示する要素
+ */
+export const metadata = {
+	title: "俺のヒーロー一覧",
+};
+
+const myHeroesPage = () => {
+	const myHeroes = [
+		{ id: 1, title: "アンパンマン" },
+		{ id: 2, title: "ショクパンマン" },
+		{ id: 3, title: "カレーパンマン" },
+	];
+
+	return (
+        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
+            <h1 className="text-4xl font-bold mb-8">俺のヒーロー一覧</h1>
+            <ul className="space-y-4">
+                {myHeroes.map((myHero) => (
+                    <li key={myHero.id} className="text-lg">
+                        <Link
+                            href={`/myHeroes/${myHero.id}`}
+                            className="text-blue-500 hover:underline"
+                        >
+                            {myHero.title}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+};
+
+export default myHeroesPage;

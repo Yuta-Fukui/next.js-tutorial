@@ -1,3 +1,4 @@
+import type { JSX } from "react";
 import Hero from "./;HeroDetails";
 
 export const metadata = {
@@ -10,7 +11,9 @@ export const metadata = {
  * @param {string} id - ヒーローのID
  * @returns {JSX.Element} ヒーローの詳細を表示する要素
  */
-const MyHeroesDetail = ({ params }: { params: { id: string } }) => {
+const MyHeroesDetail = ({
+	params,
+}: { params: { id: string } }): JSX.Element => {
 	return (
 		<main>
 			<Hero id={params.id} />
