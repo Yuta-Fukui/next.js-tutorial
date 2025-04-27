@@ -1,9 +1,9 @@
 import Link from "next/link";
 
 /**
+ * @returns {JSX.Element} ヒーロー一覧を表示する要素
  * @description
  * ヒーロー一覧を表示するコンポーネント
- * @returns {JSX.Element} ヒーロー一覧を表示する要素
  */
 export const metadata = {
 	title: "俺のヒーロー一覧",
@@ -17,7 +17,7 @@ const myHeroesPage = () => {
 	];
 
 	return (
-        <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
+        <section className="flex flex-col items-center justify-center min-h-screen bg-gray-100 text-gray-800">
             <h1 className="text-4xl font-bold mb-8">俺のヒーロー一覧</h1>
             <ul className="space-y-4">
                 {myHeroes.map((myHero) => (
@@ -31,7 +31,7 @@ const myHeroesPage = () => {
                     </li>
                 ))}
             </ul>
-        </div>
+        </section>
     );
 };
 

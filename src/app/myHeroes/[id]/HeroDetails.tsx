@@ -1,4 +1,7 @@
 import { Fragment } from "react";
+
+import { v4 as uuidv4 } from "uuid";
+
 /**
  * @description
  * ヒーローの詳細を表示するコンポーネント
@@ -32,8 +35,8 @@ export default function Hero({ id }: { id: string }) {
 		<>
 			<h1>{hero.title}</h1>
 			<p>
-				{hero.content.split("\n").map((line, index) => (
-					<Fragment key={index}>
+				{hero.content.split("\n").map((line) => (
+					<Fragment key={uuidv4()}>
 						{line}
 						<br />
 					</Fragment>
