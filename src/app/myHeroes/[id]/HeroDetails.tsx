@@ -1,11 +1,14 @@
 import { Fragment } from "react";
+
+import { v4 as uuidv4 } from "uuid";
+
 /**
  * @description
  * ヒーローの詳細を表示するコンポーネント
  * @param {string} id - ヒーローのID
  */
 export default function Hero({ id }: { id: string }) {
-	const heros: { [key: string]: { title: string; content: string } } = {
+	const heroes: { [key: string]: { title: string; content: string } } = {
 		"1": {
 			title: "アンパンマン",
 			content:
@@ -23,7 +26,7 @@ export default function Hero({ id }: { id: string }) {
 		},
 	};
 
-	const hero = heros[id] || {
+	const hero = heroes[id] || {
 		title: "ヒーローが見つかりません",
 		content: "このヒーローは存在しません",
 	};
@@ -33,7 +36,7 @@ export default function Hero({ id }: { id: string }) {
 			<h1>{hero.title}</h1>
 			<p>
 				{hero.content.split("\n").map((line) => (
-					<Fragment key={line}>
+					<Fragment key={uuidv4()}>
 						{line}
 						<br />
 					</Fragment>
