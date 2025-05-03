@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import DateOfToday from "./component/DateOfToday";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -11,18 +13,28 @@ export default function RootLayout({
 }: Readonly<{
 	children: React.ReactNode;
 }>) {
+	const todayDate = new Date().toLocaleDateString();
 	return (
 		<html lang="ja">
 			<body className="flex flex-col min-h-screen">
 				<header className="bg-blue-500 text-white p-4">
-					<h1 className="text-lg font-bold">My Hero App</h1>
-					<nav>
-						<a href="/" className="mr-4 hover:underline">
-							トップ
-						</a>
-						<a href="/myHeroes" className="hover:underline">
-							一覧
-						</a>
+					<h1 className="text-2xl font-bold mb-4">My Hero App</h1>
+					<nav className="flex items-center justify-between">
+						<div className="flex space-x-2">
+							<Link
+								href="/"
+								className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+							>
+								トップ
+							</Link>
+							<Link
+								href="/myHeroes"
+								className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
+							>
+								一覧
+							</Link>
+						</div>
+						<DateOfToday date={todayDate} />
 					</nav>
 				</header>
 				<main className="flex-1 p-4">{children}</main>

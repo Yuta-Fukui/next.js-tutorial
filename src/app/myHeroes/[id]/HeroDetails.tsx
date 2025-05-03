@@ -1,5 +1,4 @@
 import { Fragment } from "react";
-
 import { v4 as uuidv4 } from "uuid";
 
 /**
@@ -7,7 +6,7 @@ import { v4 as uuidv4 } from "uuid";
  * ヒーローの詳細を表示するコンポーネント
  * @param {string} id - ヒーローのID
  */
-export default function Hero({ id }: { id: string }) {
+export default function HeroDetails({ id }: { id: string }) {
 	const heroes: { [key: string]: { title: string; content: string } } = {
 		"1": {
 			title: "アンパンマン",
