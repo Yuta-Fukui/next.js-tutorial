@@ -1,4 +1,4 @@
-import TodayMessage from "@/app/component.tsx/TodayMessage";
+import TodayMessage from "@/app/component/TodayMessage";
 import type { JSX } from "react/jsx-runtime";
 import HeroDetails from "./HeroDetails";
 

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import DateOfToday from "./component.tsx/DateOfToday";
+import Link from "next/link";
+import DateOfToday from "./component/DateOfToday";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,18 +21,18 @@ export default function RootLayout({
 					<h1 className="text-2xl font-bold mb-4">My Hero App</h1>
 					<nav className="flex items-center justify-between">
 						<div className="flex space-x-2">
-							<a
+							<Link
 								href="/"
 								className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
 							>
 								トップ
-							</a>
-							<a
+							</Link>
+							<Link
 								href="/myHeroes"
 								className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
 							>
 								一覧
-							</a>
+							</Link>
 						</div>
 						<DateOfToday date={todayDate} />
 					</nav>
